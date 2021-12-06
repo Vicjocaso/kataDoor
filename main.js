@@ -4,8 +4,77 @@ class Door {
     this.locked = locked;
     this.key = key;
   }
+
+  openAndUnlocked(key) {
+    return new Door(true, false, key);
+  }
+  openAndLocked(key) {
+    return new Door(true, true, key);
+  }
+  closedAndUnlocked(key) {
+    return new Door(false, false, key);
+  }
+  closedAndLocked(key) {
+    return new Door(false, true, key);
+  }
+
+  open() {
+    if (this.opened === false) {
+      return (this.opened = true);
+    }
+  }
+  close() {
+    if (this.open === true) {
+      return (this.opened = false);
+    }
+  }
+  lock() {
+    if (this.locked === true) {
+      return (this.locked = false);
+    }
+  }
+  unlock(key) {
+    if (this.key === key) {
+      return (this.locked = true);
+    } else {
+      return `This key ${this.key} does not correspond to this door `;
+    }
+  }
+
+  isOpen() {
+    if (this.opened === true) {
+      return this.opened;
+    } else {
+      return false;
+    }
+  }
+  isClosed() {
+    if (this.opened === false) {
+      return (this.opened = true);
+    } else {
+      return false;
+    }
+  }
+  isLocked() {
+    if (this.locked === true) {
+      return this.locked;
+    } else {
+      return false;
+    }
+  }
+  isUnlocked() {
+    if (this.locked === false) {
+      return (this.locked = true);
+    } else {
+      return false;
+    }
+  }
 }
 const arr = () => "test";
+
+const door = new Door("123");
+let doorOpen = door.openAndUnlocked();
+console.log(doorOpen);
 
 // Door: Open, Closed, Locked, Unlocked
 //     Open -> Closed

@@ -70,11 +70,6 @@ class Door {
     }
   }
 }
-const arr = () => "test";
-
-const door = new Door("123");
-let doorOpen = door.openAndUnlocked();
-console.log(doorOpen);
 
 // Door: Open, Closed, Locked, Unlocked
 //     Open -> Closed
